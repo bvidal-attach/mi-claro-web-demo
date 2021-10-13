@@ -25,7 +25,7 @@ const initialize = (form) => {
   eventName && (eventName.value = "home_click");
   category && (category.value = "home");
   action && (action.value = "click");
-  label && (label.value = "home");
+  label && (label.value = "titulo de la pagina");
   interaction && (interaction.value = "0");
 };
 
