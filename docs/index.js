@@ -42,8 +42,7 @@ const showMessage = (text = "") => {
 
 // send data of the form
 const submitForm = (form) => {
-  const { eventName, category, action, label, interaction, button } =
-    getControls(form);
+  const { eventName, category, action, label, interaction, button } = getControls(form);
   const AnalyticsWebInterface = window.AnalyticsWebInterface;
 
   if (button === undefined || button === null) {
@@ -54,11 +53,7 @@ const submitForm = (form) => {
     button.addEventListener("click", (evt) => {
       evt.preventDefault();
 
-      console.log({ AnalyticsWebInterface });
-      if (
-        AnalyticsWebInterface === undefined ||
-        AnalyticsWebInterface === null
-      ) {
+      if (AnalyticsWebInterface === undefined || AnalyticsWebInterface === null) {
         showMessage("No existe AnalyticsWebInterface");
         return;
       }
@@ -75,15 +70,9 @@ const submitForm = (form) => {
         event_label,
         event_interaction,
       });
-      console.log({ event_name, params });
 
-      showMessage(
-        `existe AnalyticsWebInterface -> event_name: ${event_name}, params: ${params}`
-      );
+      AnalyticsWebInterface && AnalyticsWebInterface.logEvent(event_name, params);
 
-      AnalyticsWebInterface &&
-        AnalyticsWebInterface.logEvent(event_name, params);
-
-      showMessage("AnalyticsWebInterface.logEvent enviando correctamente");
+      showMessage("logEvent enviando correctamente");
     });
 };
