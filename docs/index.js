@@ -76,6 +76,8 @@ const submitForm = (form) => {
         event_interaction,
       };
       console.log({ event_name, params });
-      AnalyticsWebInterface.AnalyticsWebInterface.logEvent(event_name, params);
+      AnalyticsWebInterface.logEvent(event_name, params);
+
+      showMessage("AnalyticsWebInterface.logEvent enviando correctamente");
     });
 };
