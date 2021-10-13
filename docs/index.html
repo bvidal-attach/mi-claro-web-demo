@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mi Claro Web Demo</title>
+
+    <link async rel="stylesheet" href="./styles.css" />
+
+    <script defer src="./index.js"></script>
+  </head>
+  <body>
+    <main>
+      <h1>Mi Claro Web Demo</h1>
+
+      <section id="snackbar"></section>
+
+      <form class="form">
+        <div>
+          <label for="eventName">Nombre de Evento</label>
+          <input
+            type="text"
+            name="eventName"
+            id="eventName"
+            class="form-control"
+          />
+        </div>
+        <div>
+          <label for="eventCategory">Categoria</label>
+          <input
+            type="text"
+            name="eventCategory"
+            id="eventCategory"
+            class="form-control"
+          />
+        </div>
+        <div>
+          <label for="eventAction">Accion</label>
+          <input
+            type="text"
+            name="eventAction"
+            id="eventAction"
+            class="form-control"
+          />
+        </div>
+        <div>
+          <label for="eventLabel">Etiqueta</label>
+          <input
+            type="text"
+            name="eventLabel"
+            id="eventLabel"
+            class="form-control"
+          />
+        </div>
+        <div>
+          <label for="eventInteraction">Interaccion</label>
+          <select
+            name="eventInteraction"
+            id="eventInteraction"
+            class="form-control"
+          >
+            <option value="">Seleccione interacci&oacute;n</option>
+            <option value="0">No</option>
+            <option value="1">Si</option>
+          </select>
+        </div>
+        <div>
+          <button name="btnSend" type="submit">Send data</button>
+        </div>
+      </form>
+    </main>
+  </body>
+</html>
