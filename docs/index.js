@@ -69,14 +69,20 @@ const submitForm = (form) => {
       const event_label = (label && label.value) || "";
       const event_interaction = (interaction && interaction.value) || "";
 
-      const params = {
+      const params = JSON.stringify({
         event_category,
         event_action,
         event_label,
         event_interaction,
-      };
+      });
       console.log({ event_name, params });
-      AnalyticsWebInterface.logEvent(event_name, params);
+
+      showMessage(
+        `existe AnalyticsWebInterface -> event_name: ${event_name}, params: ${params}`
+      );
+
+      AnalyticsWebInterface &&
+        AnalyticsWebInterface.logEvent(event_name, params);
 
       showMessage("AnalyticsWebInterface.logEvent enviando correctamente");
     });
